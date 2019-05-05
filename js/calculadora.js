@@ -2,8 +2,7 @@ var valorVisor = 0;
 var numeroA;
 var numeroB;
 var operacao;
-var historicoDigitado;
-var troca;
+var agora = new Date;
 
 
 function botao(dado) {
@@ -12,24 +11,50 @@ function botao(dado) {
 
 
     valorVisor = document.getElementById("visor").value = auxiliar + dado;
+    //document.getElementById("historico").innerHTML = agora.getHours();
     
-    // para mostrar histórico de digitação
-    var temp = document.getElementById("historico").innerHTML.value;
+    // mostrar a saudação acima do visor
+    var hora = agora.getHours();
     
-    document.getElementById("historico").innerHTML = temp + dado;
-    historicoDigitado = valorVisor + dado;
-    //troca = document.getElementById("historico").innerHTML.value;
-    //historicoDigitado.innerHTML = temp + dado;
-    
-    
+    if(hora >= 0 && hora <= 12){
+      document.getElementById("historico").textContent = "Bom dia";
+    }
+    if(hora >= 13 && hora <= 17){
+      document.getElementById("historico").textContent = "Boa tarde";
+    }
+    if(hora >= 18 && hora <= 23){
+      document.getElementById("historico").textContent = "Boa tarde";
+    }
 }
+
 
 function btn_soma(caracter){
     numeroA = valorVisor;
     operacao = "+";
     
     limpar();
-    document.getElementById("historico").innerHTML += operacao;
+    //document.getElementById("historico").innerHTML += operacao;
+}
+
+function btn_subtrai(caracter){
+  numeroA = valorVisor;
+  operacao = "-";
+  
+  limpar();
+}
+
+function btn_multiplica(caracter){
+  numeroA = valorVisor;
+  operacao = "*";
+  
+  limpar();
+}
+
+function btn_divide(caracter){
+  numeroA = valorVisor;
+  operacao = "/";
+  
+  limpar();
 }
 
 function reset() {
