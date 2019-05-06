@@ -74,7 +74,7 @@ function btn_igual(){
 }
 
 function calcular() {
-    // pegar o valor do visor em ValorVisor, faz o calculo, pega o resultado e colocar no visor
+    // faz o calculo, pega o resultado e colocar no visor
     //document.getElementById('visor').value = eval(resultado);
 
     //document.getElementById('visor').value = resultado;
